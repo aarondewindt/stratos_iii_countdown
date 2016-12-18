@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" style="">
+<head>
+    <meta charset="UTF-8">
+    <title>Stratos III countdown</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!--<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-indigo.css">-->
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-blue-grey.css">
+
+
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jcanvas.min.js"></script>
+    <script src="milestone.js"></script>
+    <script src="launch.js"></script>
+    <script src="config.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // Reorder milestones so the ones with the closer deadline are on top.
+            milestones.sort(function (a, b) {
+                return a.t_diff(b.deadline)
+            });
+
+            // Add the milestones to the table
+
+            for (i = 0; i < n_show; i++) {
+                milestones[i].add_to_table(i);
+            }
+
+            // Set a callback function which will be called every 100 milliseconds.
+            setInterval(function () {
+                // Update milestone countdowns
+                for (i = 0; i < n_show; i++) {
+                    milestones[i].update();
+                }
+
+                // Update today indicator
+                var today = new Date();
+                $('#date_today').html(today.toDateString());
+                $('#time_today').html(today.toLocaleTimeString());
+
+                // Update launch count down
+                launch.update();
+
+                var next_milestone_set = false;
+                for (i = 0; i < n_show; i++) {
+                    if (!next_milestone_set) {
+                        console.log("qwerty");
+                        console.log(milestones[i].is_passed());
+
+                        if (!(milestones[i].is_passed())) {
+                            console.log("asdfg");
+                            next_milestone_set = true;
+                            milestones[i].update_next_milestone();
+                        }
+                    }
+                }
+
+            }, 100)
+        });
+    </script>
+
+</head>
+<body style="">
+    <header class="w3-display-container w3-theme-dark w3-card-4" style="height: 110px; position:relative; z-index: 1">
+        <div class="w3-display-left" style="margin-left: 10px">
+            <h1><img src="images/stratos_iii_mission_patch_1024.png" class="w3-left w3-card-16 w3-circle" style="width:80px; height:80px;">
+                <span style="font-size: 58px">&nbsp;&nbsp;Stratos III countdown</span></h1>
+        </div>
+
+        <div class="w3-display-right" style="text-align: right; margin-right: 10px">
+            <span id="date_today"></span><br>
+            <span id="time_today"></span>
+        </div>
+    </header>
+
+    <main>
+        <div class="w3-row  w3-theme-d3" style="height:100%;">
+            <div class="w3-rest" style="height:100%; display: flex; flex-direction: column">
+                <div class="w3-row w3-theme-d3 w3-padding-8 sidebar_small w3-card-8" style="width: 100%;  position:relative; flex: none">
+                    <div class="w3-half w3-container table_col_1 ">Milestone</div>
+                    <div class="w3-quarter w3-container table_col_2 ">Deadline</div>
+                    <div class="w3-quarter w3-container table_col_3 ">Countdown</div>
+                </div>
+
+                <div style="height:100%; flex-grow: 1; overflow: auto">
+                    <div id="milestones_table" style="height:100%; width: 100%; display: flex; flex-direction: column; ">
+                    </div>
+                </div>
+            </div>
+
+            <!--<div id="sidebar" class="w3-container w3-quarter w3-padding-64 w3-theme-d3" style="position: relative">-->
+                    <!--<div class="sidebar_element">-->
+                        <!--<span class="sidebar_small">Launch day</span>-->
+                        <!--<div id="date_launch" class="sidebar_big"></div>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;div class="sidebar_element">-->
+                        <!--<span class="sidebar_small">Launch time</span>-->
+                        <!--<div id="time_launch" class="sidebar_big"></div>-->
+                    <!--</div&ndash;&gt;-->
+
+                    <!--<div class="sidebar_element">-->
+                        <!--<span class="sidebar_small">Countdown</span>-->
+                        <!--<div id="countdown_days" class="sidebar_big"></div>-->
+                        <!--&lt;!&ndash;div id="countdown_time" class="sidebar_big"</div&ndash;&gt;-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;div class="sidebar_element">-->
+                        <!--<span class="sidebar_small">Next milestone</span>-->
+                        <!--<div id="next_milestone_name" class="sidebar_big"></div>-->
+                        <!--<div id="next_milestone_deadline" class="sidebar_big"></div>-->
+                        <!--<div id="next_milestone_countdown" class="sidebar_big"></div>-->
+                    <!--</div&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+
+    </main>
+
+    <footer class="w3-container w3-theme-d3 w3-padding" style="width:100%; position: relative">
+        <!--<div style="display: flex; flex-direction: column; width: 100%">-->
+            <!--<div id="milestone_bar" style="width: 100%; flex-grow: 3; background-color: #f66055"></div>-->
+            <!--<div id="project_progressbar" style="width: 100%; flex-grow: 1; background-color: aqua"></div>-->
+        <!--</div>-->
+        slckmsdlckmsdlkc
+    </footer>
+</body>
+</html>

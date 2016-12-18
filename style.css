@@ -1,0 +1,96 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer {
+    flex: none;
+}
+
+
+main {
+    overflow-y: hidden;
+    height:100%;
+}
+
+
+.warning_red {
+    background-color: #f66055;
+    color: white;
+}
+
+.table_col_1 {
+    width: auto;
+    text-align: left;
+    border-width: 0;
+}
+
+.table_col_2 {
+    width: 25%;
+    text-align: left;
+    border: none;
+}
+
+.table_col_3 {
+    width: 20%;
+    text-align: left;
+    border: none;
+}
+
+
+.milestone_name {
+    font-size: 80px;
+    font-weight: normal;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.milestone_deadline {
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.milestone_countdown {
+    font-size: 40px;
+    font-weight: normal;
+}
+
+#sidebar {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.sidebar_element {
+    flex-grow: 1;
+
+}
+
+.sidebar_small {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sidebar_big {
+    width: 100%;
+    text-align: right;
+    font-size: 50px;
+    /*margin-top: 20px;*/
+    line-height: 95%;
+}
+
+#date_today, #time_today {
+    font-size: 45px;
+    line-height: 95%;
+}
