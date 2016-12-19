@@ -43,8 +43,8 @@ Launch.prototype = {
         }else
         {
             if (this.countdown_days == null) {
-                $("#date_launch").html(this.date.toDateString());
-                $("#time_launch").html(this.date.toLocaleTimeString());
+                $("#date_launch").html(this.date.format("ddd mmm d yyyy"));
+                $("#time_launch").html(this.date.format("H:MM:SS"));
                 this.countdown_days = $("#countdown_days");
                 this.countdown_time = $("#countdown_time");
             }

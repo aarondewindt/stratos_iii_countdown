@@ -21,10 +21,16 @@ main {
 }
 
 
-.warning_red {
-    background-color: #f66055;
+.warning {
+    background-color: #6e9bf5;
     color: white;
 }
+
+.passed {
+    background-color: #37378a;
+    color: white;
+}
+
 
 .table_col_1 {
     width: auto;
@@ -46,8 +52,8 @@ main {
 
 
 .milestone_name {
-    font-size: 80px;
-    font-weight: normal;
+    font-size: 70px;
+    font-weight: bold;
 
     display: flex;
     flex-direction: column;
@@ -55,13 +61,15 @@ main {
 }
 
 .milestone_deadline {
-    font-size: 40px;
-    font-weight: normal;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .milestone_countdown {
-    font-size: 40px;
-    font-weight: normal;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #sidebar {
@@ -93,4 +101,49 @@ main {
 #date_today, #time_today {
     font-size: 45px;
     line-height: 95%;
+}
+
+.marker_future {
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #b3c3ff;
+    border: 3px solid #2e2e65;
+}
+
+.marker_past {
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color: #6673b8;
+    border: 3px solid #2e2e65;
+}
+
+.marker_node {
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: white;
+}
+
+.marker_name {
+    z-index: 1;
+    height: 30px;
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#rocket_icon {
+    width: 100px;
+    height: auto;
+    position: fixed;
+    right: -18px;
+    bottom: 80px;
+    transform: rotate(-110deg);
 }
