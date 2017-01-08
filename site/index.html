@@ -8,8 +8,46 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="w3.css">
-    <!--<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-indigo.css">-->
     <link rel="stylesheet" href="theme.css">
+
+    <script>
+        function contains(arr, obj) {
+            return arr.indexOf(obj) > -1;
+        }
+
+        function rem(arr, val) {
+            var i = arr.indexOf(val);
+            if (i > -1) {
+                arr.splice(i, 1);
+            }
+        }
+
+
+        function remove_milestone(milestone) {
+            console.log("Removing console");
+            rem(visible_milestones, milestone);
+
+            milestone.tr_element.remove();
+//            milestone.tr_element = null;
+
+
+            for (var i = 0; visible_milestones.length < n_show; i++) {
+                if (milestones[i] != undefined)
+                {
+                    if (milestones[i].is_passed_remove_date()) {
+                        i++;
+                    }else if (!contains(visible_milestones, milestones[i])) {
+                        visible_milestones.push(milestones[i]);
+                        milestones[i].add_to_table(i);
+                    }
+                } else {
+                    break;
+                }
+
+            }
+        }
+
+    </script>
 
 
     <script src="jquery-3.1.1.min.js"></script>
@@ -20,65 +58,70 @@
     <script src="config.js"></script>
 
     <script>
-        $(document).ready(function(){
+        var visible_milestones = [];
 
+
+        $(document).ready(function(){
             // Reorder milestones so the ones with the closer deadline are on top.
             milestones.sort(function (a, b) {
                 return a.t_diff(b.deadline)
             });
 
-            // Add the milestones to the table
-
-            for (i = 0; i < n_show; i++) {
-                milestones[i].add_to_table(i);
+            // Get list of visible milestones and add them to the table.
+            for (var i = 0; visible_milestones.length < n_show; i++) {
+                if (milestones[i] != undefined)
+                {
+                    if (!milestones[i].is_passed_remove_date()) {
+                        visible_milestones.push(milestones[i]);
+                        milestones[i].add_to_table(i);
+                    }
+                } else {
+                    break;
+                }
             }
 
-            for (i in milestones) {
-                milestones[i].add_to_bar();
-            }
+//            console.log(visible_milestones);
 
+
+            // Cache progress bar objects.
             var progress = $('#progress');
             var progress_bar = $('#progress_bar');
-
             var milestones_container = $('#milestones_container');
             var milestones_table = $('#milestones_table');
 
-            var milestones_max_scroll = milestones_table.height() - milestones_container.height();
+            // Initialize scrolling animation.
             var scroll_speed = .02;
             var scroll_state = 0;
             var scroll_top_delay = 2000;
             var scroll_bottom_delay = 2000;
             var scroll_timer = 0;
-
             var dt = 100;
-
-
 
             // Set a callback function which will be called every 100 milliseconds.
             setInterval(function () {
                 // Update milestone countdowns
-                for (i = 0; i < n_show; i++) {
-                    milestones[i].update();
+                for (var i in visible_milestones) {
+                    try {
+                        visible_milestones[i].update(i);
+                    }
+                    catch(err) {
+                        console.log(visible_milestones[i].name)
+                    }
+
+
                 }
 
-                // Update today indicator
+                for (i in milestones) {
+                    milestones[i].update_bar();
+                }
+
+                // Update today clock
                 var today = new Date();
                 $('#date_today').html(today.format("ddd mmm d yyyy"));
                 $('#time_today').html(today.format("HH:MM:ss"));
 
                 // Update launch count down
                 launch.update();
-
-                var next_milestone_set = false;
-                for (i = 0; i < n_show; i++) {
-                    if (!next_milestone_set) {
-
-                        if (!(milestones[i].is_passed())) {
-                            next_milestone_set = true;
-                            milestones[i].update_next_milestone();
-                        }
-                    }
-                }
 
                 // Update progressbar
                 p = (new Date() - start_date)/(launch.date - start_date);
@@ -87,6 +130,7 @@
                 // Update scroll
                 scroll_timer += dt;
                 var new_scroll_pos = null;
+                var milestones_max_scroll = milestones_table.height() - milestones_container.height();
 
                 switch(scroll_state) {
                     case 0:
@@ -120,13 +164,12 @@
                 milestones_container.scrollTop(new_scroll_pos);
 
 
-            }, dt)
-        });
+            }, dt);
 
-        $(window).resize(function () {
-            for (i in milestones) {
-                milestones[i].update_bar();
-            }
+            // Auto refresh 5 seconds after VrijMiBo.
+            setTimeout(function () {
+                location.reload(true);
+            }, vrijmibo_end.getTime() - new Date().getTime() + 5000)
         });
 
     </script>
@@ -176,13 +219,6 @@
                         <!--<div id="countdown_days" class="sidebar_big"></div>-->
                         <!--&lt;!&ndash;div id="countdown_time" class="sidebar_big"</div&ndash;&gt;-->
                     <!--</div>-->
-
-                    <!--&lt;!&ndash;div class="sidebar_element">-->
-                        <!--<span class="sidebar_small">Next milestone</span>-->
-                        <!--<div id="next_milestone_name" class="sidebar_big"></div>-->
-                        <!--<div id="next_milestone_deadline" class="sidebar_big"></div>-->
-                        <!--<div id="next_milestone_countdown" class="sidebar_big"></div>-->
-                    <!--</div&ndash;&gt;-->
             <!--</div>-->
         </div>
 

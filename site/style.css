@@ -14,21 +14,39 @@ footer {
     flex: none;
 }
 
-
 main {
     overflow-y: hidden;
     height:100%;
 }
 
-
-.warning {
-    background-color: #6e9bf5;
+.warning_l {
+    background-color: #6a93e6;
     color: white;
 }
 
-.passed {
-    background-color: #37378a;
+.warning_d {
+    background-color: #5c81cc;
     color: white;
+}
+
+.ongoing_l {
+    background-color: #3d3d99;
+    color: white;
+}
+
+.ongoing_d {
+    background-color: #333380;
+    color: white;
+}
+
+.normal_l {
+    background-color: #fff;
+    color: #000;
+}
+
+.normal_d {
+    color:#000;
+    background-color:#dfe5e8;
 }
 
 
@@ -109,7 +127,7 @@ main {
     height: 15px;
     position: absolute;
     background-color: #b3c3ff;
-    border: 3px solid #2e2e65;
+    border: 4px solid #2e2e65;
 }
 
 .marker_past {
@@ -117,8 +135,8 @@ main {
     width: 15px;
     height: 15px;
     position: absolute;
-    background-color: #6673b8;
-    border: 3px solid #2e2e65;
+    background-color: #2e2e65;
+    border: 4px solid #2e2e65;
 }
 
 .marker_node {
