@@ -11,15 +11,15 @@ var n_show = 10;
 var today = new Date();
 
 var milestones = [
-    new Milestone("Small scale testing", "2016-12-12", "2016-12-21", 2, -40),
-    new Milestone("Preliminary design completed", "2017-02-19", undefined, 1, 0),
-    new Milestone("PR plan completed", "2017-01-15"),
-    new Milestone("Detailed engine design completed", "2017-01-12"),
-    new Milestone("First full scale test", "2017-03-19", undefined, 2, -30),
-    new Milestone("CDR", "2017-04-30", undefined, 1),
-    new Milestone("Design freeze", "2017-05-14", undefined, 2, 30),
-    new Milestone("Hardware done", "2017-07-15", undefined, 1),
-    new Milestone("Roll-out", "2017-09-12", undefined, 2)
+    new Milestone("Small scale testing", "2016-12-12", "2016-12-21 23:59", 2, -40),
+    new Milestone("Preliminary design completed", "2017-02-19 23:59", undefined, 1, 0),
+    new Milestone("PR plan completed", "2017-01-15 23:59"),
+    new Milestone("Detailed engine design", "2017-01-08", "2017-01-21 23:59"),
+    new Milestone("First full scale test", "2017-03-19 23:59", undefined, 2, -30),
+    new Milestone("CDR", "2017-04-30 23:59", undefined, 1),
+    new Milestone("Design freeze", "2017-05-14 23:59", undefined, 2, 30),
+    new Milestone("Hardware done", "2017-07-15 23:59", undefined, 1),
+    new Milestone("Roll-out", "2017-09-12 23:59", undefined, 2)
 
 
     // new Milestone("Random", today.getTime() + 5*1000, today.getTime() + 10*1000),
