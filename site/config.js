@@ -10,39 +10,64 @@ var start_date = new Date("2016-9-1");
 var n_show = 10;
 var today = new Date();
 
+// Milestone(name, deadline, remove_date, show_marker, marker_shift)
+
 var milestones = [
-    new Milestone("Small scale testing", "2016-12-12", "2016-12-21 23:59", 2, -40),
-    new Milestone("Preliminary design completed", "2017-02-19 23:59", undefined, 1, 0),
-    new Milestone("PR plan completed", "2017-01-15 23:59"),
-    new Milestone("Detailed engine design", "2017-01-08", "2017-01-21 23:59"),
-    new Milestone("First full scale test", "2017-03-19 23:59", undefined, 2, -30),
-    new Milestone("CDR", "2017-04-30 23:59", undefined, 1),
-    new Milestone("Design freeze", "2017-05-14 23:59", undefined, 2, 30),
-    new Milestone("Hardware done", "2017-07-15 23:59", undefined, 1),
-    new Milestone("Roll-out", "2017-09-12 23:59", undefined, 2)
+    new Milestone("Start of the Project", "2016-9-1", "2016-12-21 23:59", 2, -40),
+
+    // new Milestone("Core Team Selected", "2016-9-1"),
+    new Milestone("Baseline Design done", "2016-11-1", undefined, 1, 0),
+    new Milestone("Requirements defined", "2016-11-1"),
+    new Milestone("Stratos II+ Electronics running", "2017-1-8"),
+    // new Milestone("PR Plan is done", "2017-1-15"),
+    // new Milestone("Test Site aquired", "2017-1-15"),
+    new Milestone("Detailed Engine Design", "2017-1-22", undefined, 1, -50),
+    new Milestone("Liner Material and Diameter Set", "2017-1-22"),
+    new Milestone("Initial Flight Simulations done", "2017-1-25"),
+    new Milestone("Production Methods Engine verified", "2017-2-12"),
+    new Milestone("Preliminary Design", "2017-2-19", undefined, 2, 0),
+    new Milestone("Payloads defined (size and number)", "2017-2-19"),
+    new Milestone("Pre Engine Tests completed", "2017-2-22"),
+    new Milestone("Structure Prototypes done", "2017-2-26"),
+    new Milestone("Data acquisition finished", "2017-3-5"),
+    new Milestone("Test Subsystems finished", "2017-3-12"),
+    new Milestone("Engine Test Dress Rehearsal", "2017-3-22"),
+    new Milestone("Prototype testing done", "2017-3-22"),
+    new Milestone("First Full Scale Tests", "2017-3-30", "2017-4-11 23:59", 1, -30),
+
+    new Milestone("CDR reports delivery", "2017-4-30", undefined, 2, 0),
+    new Milestone("CDR reports revision", "2017-5-7"),
+    new Milestone("Critical design reviews", "2017-5-14", "2017-5-31", 1, 50)
+
+    /*
+    new Milestone("Transport for Testing arranged", "2017-3-27"),
+    new Milestone("Tank prototype tested", "2017-4-9"),
+    // new Milestone("Launch Site arranged", "2017-4-15"),
+    new Milestone("Critical Design Review", "2017-4-30", undefined, 2, 0),
+    new Milestone("Composite CC produced and tested", "2017-4-30"),
+    // new Milestone("Budget is filled", "2017-4-30"),
+    new Milestone("Flight Engine is verified", "2017-5-1"),
+    new Milestone("Monte Carlo Analysis", "2017-5-14"),
+    new Milestone("Design freeze", "2017-5-14", undefined, 1, 0),
+    new Milestone("Structural Elements Produced", "2017-6-15"),
+    // new Milestone("Insurance is signed", "2017-6-15"),
+    new Milestone("Basic Flight Computer functioning", "2017-6-15"),
+    new Milestone("Flight Termination verified", "2017-6-15"),
+    new Milestone("Parachute Deployment verified", "2017-6-15"),
+    new Milestone("Structural elements tested for flight", "2017-7-2"),
+    new Milestone("Ground Support Systems ready", "2017-7-2"),
+    new Milestone("Electronic Subsystems verified", "2017-7-2"),
+    new Milestone("Tower is ready", "2017-8-6"),
+    new Milestone("Rocket Integration", "2017-8-6", undefined, 1, -50),
+    new Milestone("Rocket and Tower Integration", "2017-8-6"),
+    new Milestone("Dress Rehearsals", "2017-8-13", undefined, 2, 0),
+    new Milestone("Roll Out", "2017-9-12", undefined, 1, 0)
+    // new Milestone("Rocket is launched", "2017-10-1"),
+    // new Milestone("Past Launch Meeting", "2017-10-15")
+    */
 
 
-    // new Milestone("Random", today.getTime() + 5*1000, today.getTime() + 10*1000),
 
-    // new Milestone("Catia tutorial", "2016-12-19 22:47:00", "2016-12-19 22:47:05"),
-
-    //
-    // new Milestone('Milestone 0', new Date((new Date()).getTime() + 23*24*60*60*1000), 2),
-    //
-    // new Milestone('Milestone 1', new Date((new Date()).getTime() + 35*24*60*60*1000), 1, 40),
-
-
-    // new Milestone('Prop PDR', '2017-1-21', undefined, 2, -50),
-    // new Milestone('Prop Manufacturing', '2017-2-2', undefined, 1, 10),
-    // new Milestone('Prop Testing Phase I', '2017-3-1', undefined, 2, 30),
-    // new Milestone('Prop Testing Phase II', '2017-4-25', undefined, 1),
-    // new Milestone('Final GO, NO GO', '2017-6-23', undefined, 2),
-    // new Milestone('Final Manufacturing Begins', '2017-7-1'),
-    // new Milestone('Transport', '2017-8-15', undefined, 1),
-    // new Milestone('CT Team Travel to L.S ', '2017-9-19'),
-    // new Milestone('Final Prep for launch', '2017-9-27'),
-    // new Milestone('Launch GO, NO GO', '2017-9-30', undefined, 2),
-    // new Milestone('LAUNCH DAY', '2017-10-5')
 ];
 
 
