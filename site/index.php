@@ -193,7 +193,7 @@
 
     <main>
         <?php
-        $command = escapeshellcmd("python3.6 " . getcwd() . "/test.py");
+        $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_loader.py");
         echo $command;
         system($command);
 
