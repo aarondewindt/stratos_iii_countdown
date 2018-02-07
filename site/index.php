@@ -59,7 +59,9 @@
 
 
     <?php
-    echo "dsklcldskmcldskmc"
+        $command = escapeshellcmd(getcwd() . "/milestones_sheet.py");
+        $output = shell_exec($command);
+        echo $output;
     ?>
 
     <script>
