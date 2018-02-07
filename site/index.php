@@ -58,7 +58,10 @@
     <script src="config.js"></script>
 
 
-
+    <?php
+        $command = "python3.6 " . getcwd() . "/milestones_sheet.py"
+        echo $command;
+    ?>
 
     <script>
         var visible_milestones = [];
