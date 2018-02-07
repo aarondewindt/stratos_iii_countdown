@@ -193,10 +193,9 @@
 
     <main>
         <?php
-        $command = escapeshellcmd("python3.6 " . getcwd() . "/test.py");
+        $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_sheet.py");
         echo $command;
-        $output = system($command);
-        echo $output;
+        system($command);
     ?>
 
         <div class="w3-row  w3-theme-d3" style="height:100%;">
