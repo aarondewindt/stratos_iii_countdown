@@ -58,12 +58,7 @@
     <script src="config.js"></script>
 
 
-    <?php
-        $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_sheet.py");
-        echo $command;
-        $output = shell_exec($command);
-        echo $output;
-    ?>
+
 
     <script>
         var visible_milestones = [];
@@ -197,6 +192,13 @@
     </header>
 
     <main>
+        <?php
+        $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_sheet.py");
+        echo $command;
+        $output = system($command);
+        echo $output;
+    ?>
+
         <div class="w3-row  w3-theme-d3" style="height:100%;">
             <div class="w3-rest" style="height:100%; display: flex; flex-direction: column">
                 <div class="w3-row w3-theme-d3 w3-padding-8 sidebar_small w3-card-8" style="width: 100%;  position:relative; flex: none">
