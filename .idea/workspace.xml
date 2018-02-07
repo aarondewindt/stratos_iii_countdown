@@ -73,8 +73,8 @@
       <file leaf-file-name="milestones_sheet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/milestones_sheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -377,7 +377,7 @@
       <workItem from="1493048122114" duration="948000" />
       <workItem from="1508161244350" duration="5471000" />
       <workItem from="1516014049977" duration="208000" />
-      <workItem from="1518011784702" duration="8569000" />
+      <workItem from="1518011784702" duration="8838000" />
     </task>
     <task id="LOCAL-00001" summary="Updates schedule">
       <created>1493048842345</created>
@@ -421,11 +421,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518031470608</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="I'm sure it will work this time">
+      <created>1518031704445</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1518031704445</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81036000" />
+    <option name="totallyTimeSpent" value="81305000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1146" height="1413" extended-state="0" />
@@ -459,7 +466,8 @@
     <MESSAGE value="Updates schedule" />
     <MESSAGE value="things" />
     <MESSAGE value="this time it will work" />
-    <option name="LAST_COMMIT_MESSAGE" value="this time it will work" />
+    <MESSAGE value="I'm sure it will work this time" />
+    <option name="LAST_COMMIT_MESSAGE" value="I'm sure it will work this time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -767,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/milestones_sheet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="22" column="56" lean-forward="true" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
           <folding />
         </state>
       </provider>
