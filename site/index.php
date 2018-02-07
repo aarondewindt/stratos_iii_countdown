@@ -59,7 +59,7 @@
 
 
     <?php
-        $command = "python3.6 " . getcwd() . "/milestones_sheet.py"
+        $command = "python3.6 milestones_sheet.py"
         echo $command;
     ?>
 
