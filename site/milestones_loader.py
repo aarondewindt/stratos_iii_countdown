@@ -1,5 +1,5 @@
 from traceback import format_exc
-
+home_dir = "/home/daresimserver"
 try:
     import httplib2
     import os
@@ -20,9 +20,10 @@ try:
     # If modifying these scopes, delete your previously saved credentials
     # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
     SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-    CLIENT_SECRET_FILE = 'client_secret.json'
+    CLIENT_SECRET_FILE = os.path.join(home_dir, '.stratos/secret.json')
     APPLICATION_NAME = 'Google Sheets API Python Quickstart'
 
+    print(CLIENT_SECRET_FILE)
 
     def get_credentials():
         """Gets valid user credentials from storage.
@@ -33,7 +34,6 @@ try:
         Returns:
             Credentials, the obtained credential.
         """
-        home_dir = os.path.expanduser('~')
         credential_dir = os.path.join(home_dir, '.credentials')
         if not os.path.exists(credential_dir):
             os.makedirs(credential_dir)
@@ -60,11 +60,11 @@ try:
         students in a sample spreadsheet:
         https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
         """
-        credentials = get_credentials()
-        http = credentials.authorize(httplib2.Http())
+        #credentials = get_credentials()
+        #http = credentials.authorize(httplib2.Http())
         discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
                         'version=v4')
-        service = discovery.build('sheets', 'v4', http=http,
+        service = discovery.build('sheets', 'v4', developerKey="AIzaSyCZ41Zj4_eChwYANXzbDBajEWX8dt3a2Ao",
                                   discoveryServiceUrl=discoveryUrl)
 
         spreadsheetId = '1zcCmtkVP4Hjy5uDuN4veMTqYquMRcF-82mMt2kRhnmU'
@@ -93,11 +93,9 @@ try:
         yield from ([x if x != "" else None for x in row] + [None] * (5 - len(row)) for row in rows)
 
 
-    raise Exception("error")
 
     if __name__ == '__main__':
         main()
 except:
     print(format_exc())
 
-print("end")
