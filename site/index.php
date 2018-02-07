@@ -193,7 +193,7 @@
 
     <main>
         <?php
-        $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_sheet.py");
+        $command = escapeshellcmd("python3.6 " . getcwd() . "/test.py");
         echo $command;
         $output = system($command);
         echo $output;
