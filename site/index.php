@@ -60,6 +60,7 @@
 
     <?php
         $command = escapeshellcmd(getcwd() . "/milestones_sheet.py");
+        echo $command;
         $output = shell_exec($command);
         echo $output;
     ?>
