@@ -12,6 +12,8 @@ var today = new Date();
 
 // Milestone(name, deadline, remove_date, show_marker, marker_shift)
 var milestones = [
+    new Milestone("Food", "2018-2-7 19:10"),
+
     new Milestone("Start of the Project", "2016-9-1", "2016-12-21 23:59", 2, -40),
 
     // new Milestone("Core Team Selected", "2016-9-1"),
