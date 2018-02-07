@@ -196,6 +196,7 @@
         $command = escapeshellcmd("python3.6 " . getcwd() . "/milestones_loader.py");
         echo $command;
         system($command);
+
     ?>
 
         <div class="w3-row  w3-theme-d3" style="height:100%;">

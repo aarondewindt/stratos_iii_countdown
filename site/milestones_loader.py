@@ -6,7 +6,6 @@ from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools
 from oauth2client.file import Storage
-from pathlib import Path
 
 from dateutil.parser import parse as datetime_parse
 
@@ -19,9 +18,10 @@ except ImportError:
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
-CLIENT_SECRET_FILE = str(Path.home() / ".stratos" / "secret.json")
+CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Google Sheets API Python Quickstart'
-\
+
+
 def get_credentials():
     """Gets valid user credentials from storage.
 
