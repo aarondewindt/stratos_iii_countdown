@@ -57,6 +57,11 @@
     <script src="launch.js"></script>
     <script src="config.js"></script>
 
+
+    <?php
+    echo "dsklcldskmcldskmc"
+    ?>
+
     <script>
         var visible_milestones = [];
 
